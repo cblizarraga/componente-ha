@@ -1,0 +1,107 @@
+{
+  "project": {
+    "name": "componente-ha",
+    "integration_domain": "componente_ha",
+    "component_path": "custom_components/componente_ha",
+    "documentation_path": "docs",
+    "opencode_agent": "ha-component-dev"
+  },
+  "goal": {
+    "summary": "Crear un custom component de Home Assistant para visualizar entidades basicas de una instancia local.",
+    "first_target": "Nivel del tanque de gas de Home Assistant local",
+    "basic_test_definition": "Configurar una entidad existente, leer su estado desde Home Assistant y confirmar que el valor puede consultarse o visualizarse de forma basica."
+  },
+  "current_state": {
+    "custom_component_created": true,
+    "manifest_created": true,
+    "init_created": true,
+    "config_flow_created": true,
+    "const_created": true,
+    "docs_created": true,
+    "opencode_agent_created": true,
+    "entity_id_configured_in_flow": true,
+    "entity_state_read_in_setup": true
+  },
+  "known_files": {
+    "manifest": "custom_components/componente_ha/manifest.json",
+    "init": "custom_components/componente_ha/__init__.py",
+    "const": "custom_components/componente_ha/const.py",
+    "config_flow": "custom_components/componente_ha/config_flow.py",
+    "plan": "docs/plan.md",
+    "execution": "docs/exec.md",
+    "memory": "docs/memory.json",
+    "agent": ".opencode/agent/ha-component-dev.md"
+  },
+  "decisions": [
+    {
+      "date": "2026-06-07",
+      "decision": "Usar el dominio componente_ha para la integracion.",
+      "reason": "Coincide con el nombre del repositorio y evita espacios o caracteres invalidos para dominios de Home Assistant."
+    },
+    {
+      "date": "2026-06-07",
+      "decision": "Mantener el tanque de gas como entidad configurable, no hardcodeada.",
+      "reason": "El entity_id real aun no esta definido y puede variar entre instancias de Home Assistant."
+    },
+    {
+      "date": "2026-06-07",
+      "decision": "Crear un agente de opencode especializado para el desarrollo del componente.",
+      "reason": "El proyecto necesita continuidad entre plan, ejecucion y memoria documental."
+    },
+    {
+      "date": "2026-06-07",
+      "decision": "Usar el entity_id configurado como unique_id de la config entry.",
+      "reason": "Evita duplicar configuraciones para la misma entidad del tanque o entidad objetivo."
+    },
+    {
+      "date": "2026-06-07",
+      "decision": "Guardar una lectura inicial en hass.data durante async_setup_entry.",
+      "reason": "Permite confirmar que la integracion puede leer una entidad existente antes de definir la visualizacion final."
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "gas_tank_entity_id",
+      "question": "Cual es el entity_id real del tanque de gas en Home Assistant local?",
+      "status": "pending"
+    },
+    {
+      "id": "gas_tank_unit",
+      "question": "Que unidad usa el nivel del tanque de gas: porcentaje, litros, kilogramos u otra?",
+      "status": "pending"
+    },
+    {
+      "id": "initial_visualization",
+      "question": "La primera visualizacion sera pagina propia, panel, dashboard card, sensor agregado o servicio?",
+      "status": "pending"
+    }
+  ],
+  "next_steps": [
+    {
+      "order": 1,
+      "task": "Agregar entity_id al config flow.",
+      "status": "completed"
+    },
+    {
+      "order": 2,
+      "task": "Validar que la entidad configurada exista usando hass.states.get(entity_id).",
+      "status": "completed"
+    },
+    {
+      "order": 3,
+      "task": "Definir e implementar la visualizacion inicial mas simple para probar el valor.",
+      "status": "pending"
+    },
+    {
+      "order": 4,
+      "task": "Documentar pasos de prueba local en docs/exec.md.",
+      "status": "pending"
+    }
+  ],
+  "constraints": [
+    "No asumir el entity_id real del tanque de gas.",
+    "No agregar integraciones externas si no son necesarias para la primera prueba.",
+    "Priorizar una prueba local basica antes de expandir visualizacion o empaquetado.",
+    "Actualizar esta memoria cuando cambien decisiones, bloqueos o siguientes pasos."
+  ]
+}
