@@ -16,7 +16,7 @@ La instalacion esperada es como repositorio personalizado, no copiando archivos 
 2. Ve a Integraciones.
 3. Abre el menu de tres puntos.
 4. Selecciona Repositorios personalizados.
-5. Agrega esta URL: `https://github.com/cblizarraga/componente-ha`
+5. Agrega esta URL: `https://github.com/cblizarraga/wizzyos-ha`
 6. Selecciona la categoria Integracion.
 7. Instala `WizzyOS`.
 8. Reinicia Home Assistant.

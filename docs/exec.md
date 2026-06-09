@@ -56,7 +56,7 @@ Estado: pendiente.
 
 ### 4. Probar en Home Assistant Local
 
-- Agregar `https://github.com/cblizarraga/componente-ha` como repositorio personalizado de HACS.
+- Agregar `https://github.com/cblizarraga/wizzyos-ha` como repositorio personalizado de HACS.
 - Instalar la integracion desde HACS.
 - Reiniciar Home Assistant.
 - Agregar la integracion desde la UI.
@@ -86,6 +86,7 @@ Estado: pendiente.
 - Se cambio el import a `homeassistant.core.valid_entity_id` y se simplifico la anotacion de retorno de `async_step_user` para compatibilidad.
 - Se cambio el nombre visible de la integracion de `Componente HA` a `WizzyOS`, manteniendo inicialmente el dominio tecnico `componente_ha`.
 - Se cambio el dominio tecnico de `componente_ha` a `wizzyos` y la carpeta del componente a `custom_components/wizzyos`.
+- Se preparo el cambio de nombre del repositorio de `componente-ha` a `wizzyos-ha`.
 
 ## Riesgos o Bloqueos
 

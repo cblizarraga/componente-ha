@@ -4,7 +4,7 @@
   "codeowners": [],
   "config_flow": true,
   "dependencies": [],
-  "documentation": "https://github.com/cblizarraga/componente-ha",
+  "documentation": "https://github.com/cblizarraga/wizzyos-ha",
   "integration_type": "hub",
   "iot_class": "local_polling",
   "requirements": [],

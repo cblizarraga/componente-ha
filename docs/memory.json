@@ -1,6 +1,6 @@
 {
   "project": {
-    "name": "componente-ha",
+    "name": "wizzyos-ha",
     "display_name": "WizzyOS",
     "integration_domain": "wizzyos",
     "component_path": "custom_components/wizzyos",
@@ -86,6 +86,11 @@
       "date": "2026-06-08",
       "decision": "Cambiar el dominio tecnico de componente_ha a wizzyos.",
       "reason": "El usuario pidio que el dominio tecnico tambien refleje el nombre WizzyOS. Es un cambio rompedor y Home Assistant lo tratara como una integracion distinta."
+    },
+    {
+      "date": "2026-06-08",
+      "decision": "Renombrar el repositorio de componente-ha a wizzyos-ha.",
+      "reason": "El usuario prefiere alinear el nombre del repositorio con WizzyOS antes de avanzar mas."
     }
   ],
   "test_findings": [
