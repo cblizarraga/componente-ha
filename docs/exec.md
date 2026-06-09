@@ -13,6 +13,7 @@ Este archivo registra el avance practico del desarrollo del componente hasta log
 - Metadatos para repositorio personalizado creados en `hacs.json`.
 - Guia de instalacion creada en `README.md`.
 - Nombre visible de la integracion actualizado a `WizzyOS`.
+- Reglas de gestion de contexto documentadas en `docs/context-management.md`.
 - Archivos iniciales creados:
   - `manifest.json`
   - `__init__.py`
@@ -53,6 +54,7 @@ Estado: implementado parcialmente. `async_setup_entry` obtiene la entidad config
 - Documentar el mecanismo seleccionado.
 
 Estado: pendiente.
+Estado: validado. La integracion ya quedo funcionando en Home Assistant local.
 
 ### 4. Probar en Home Assistant Local
 
@@ -87,10 +89,12 @@ Estado: pendiente.
 - Se cambio el nombre visible de la integracion de `Componente HA` a `WizzyOS`, manteniendo inicialmente el dominio tecnico `componente_ha`.
 - Se cambio el dominio tecnico de `componente_ha` a `wizzyos` y la carpeta del componente a `custom_components/wizzyos`.
 - Se preparo el cambio de nombre del repositorio de `componente-ha` a `wizzyos-ha`.
+- Se establecio como regla permanente documentar avances, decisiones, errores y bloqueos, manteniendo `docs/memory.json` como memoria de largo plazo.
+- Se confirmo que la integracion WizzyOS ya funciona en Home Assistant local.
 
 ## Riesgos o Bloqueos
 
 - Falta conocer el `entity_id` real del tanque de gas.
 - Falta decidir el mecanismo exacto de visualizacion dentro de Home Assistant.
 - La prueba local depende de tener acceso a una instancia de Home Assistant con la entidad ya configurada.
-- Falta confirmar en Home Assistant local que el fix del config flow elimina el error `Invalid handler specified`.
+- Confirmado: la integracion ya funciona en Home Assistant local despues de los ajustes de dominio/config flow.

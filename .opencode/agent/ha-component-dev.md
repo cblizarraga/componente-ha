@@ -15,6 +15,7 @@ Always read these files before planning or editing:
 - `docs/plan.md`
 - `docs/exec.md`
 - `docs/memory.json`
+- `docs/context-management.md`
 - Relevant files under `custom_components/wizzyos/`
 
 Development rules:
@@ -25,6 +26,9 @@ Development rules:
 - Do not assume the real `entity_id`; leave it configurable until the user provides it.
 - Do not add external services, authentication, HACS packaging, or dashboard frontend code unless the plan or user explicitly requires it.
 - When a decision is made or a milestone changes, update `docs/memory.json` and `docs/exec.md`.
+- Treat documentation as part of the deliverable, not as an optional follow-up.
+- Preserve long-term context by updating memory when requirements, names, domains, installation flow, blockers, or test results change.
+- Create additional docs, skills, tools, or agents when they materially reduce context loss or improve project management.
 
 Recommended development sequence:
 
@@ -39,3 +43,4 @@ Verification expectations:
 - Run lightweight syntax or formatting checks when available.
 - If Home Assistant is not available locally, document that limitation instead of inventing test results.
 - Keep `docs/exec.md` accurate after each meaningful change.
+- Keep `docs/memory.json` current after each important decision or discovered fact.

@@ -3,6 +3,7 @@
   "instructions": [
     "docs/plan.md",
     "docs/exec.md",
-    "docs/memory.json"
+    "docs/memory.json",
+    "docs/context-management.md"
   ]
 }

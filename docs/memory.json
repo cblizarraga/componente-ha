@@ -27,7 +27,9 @@
     "readme_created": true,
     "config_flow_import_fix_applied": true,
     "display_name_updated_to_wizzyos": true,
-    "technical_domain_updated_to_wizzyos": true
+    "technical_domain_updated_to_wizzyos": true,
+    "context_management_documented": true,
+    "integration_working_in_home_assistant": true
   },
   "known_files": {
     "manifest": "custom_components/wizzyos/manifest.json",
@@ -37,6 +39,7 @@
     "plan": "docs/plan.md",
     "execution": "docs/exec.md",
     "memory": "docs/memory.json",
+    "context_management": "docs/context-management.md",
     "agent": ".opencode/agent/ha-component-dev.md",
     "hacs": "hacs.json",
     "readme": "README.md"
@@ -91,6 +94,11 @@
       "date": "2026-06-08",
       "decision": "Renombrar el repositorio de componente-ha a wizzyos-ha.",
       "reason": "El usuario prefiere alinear el nombre del repositorio con WizzyOS antes de avanzar mas."
+    },
+    {
+      "date": "2026-06-08",
+      "decision": "Gestionar el desarrollo con documentacion y memoria persistente obligatoria.",
+      "reason": "El usuario pidio no perder contexto, documentar siempre, recordar TODO en memoria cuando sea necesario y crear documentos, skills, tools o agentes si ayudan a la gestion integral."
     }
   ],
   "test_findings": [
@@ -98,7 +106,13 @@
       "date": "2026-06-08",
       "source": "Home Assistant local",
       "finding": "Al intentar agregar la integracion se mostro No se pudo cargar el flujo de configuracion: Invalid handler specified.",
-      "status": "fix_applied_pending_retest"
+      "status": "resolved"
+    },
+    {
+      "date": "2026-06-08",
+      "source": "Home Assistant local",
+      "finding": "La integracion WizzyOS quedo funcionando en Home Assistant local.",
+      "status": "confirmed_working"
     }
   ],
   "open_questions": [
@@ -142,6 +156,11 @@
     {
       "order": 5,
       "task": "Instalar desde el repositorio personalizado en Home Assistant local y validar que HACS detecte la integracion.",
+      "status": "completed"
+    },
+    {
+      "order": 6,
+      "task": "Definir el mecanismo visible inicial para mostrar la entidad objetivo.",
       "status": "pending"
     }
   ],
@@ -151,6 +170,8 @@
     "No depender de copiar manualmente custom_components para la instalacion inicial.",
     "El dominio tecnico actual es wizzyos; no volver a componente_ha salvo solicitud explicita.",
     "Priorizar una prueba local basica antes de expandir visualizacion o empaquetado.",
-    "Actualizar esta memoria cuando cambien decisiones, bloqueos o siguientes pasos."
+    "Actualizar esta memoria cuando cambien decisiones, bloqueos o siguientes pasos.",
+    "Documentar avances, errores reales, pruebas, decisiones y bloqueos como parte obligatoria del trabajo.",
+    "Crear documentos, skills, tools o agentes adicionales cuando ayuden a preservar contexto o gestionar mejor el proyecto."
   ]
 }
