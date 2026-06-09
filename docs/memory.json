@@ -20,7 +20,10 @@
     "docs_created": true,
     "opencode_agent_created": true,
     "entity_id_configured_in_flow": true,
-    "entity_state_read_in_setup": true
+    "entity_state_read_in_setup": true,
+    "repository_installation_required": true,
+    "hacs_metadata_created": true,
+    "readme_created": true
   },
   "known_files": {
     "manifest": "custom_components/componente_ha/manifest.json",
@@ -30,7 +33,9 @@
     "plan": "docs/plan.md",
     "execution": "docs/exec.md",
     "memory": "docs/memory.json",
-    "agent": ".opencode/agent/ha-component-dev.md"
+    "agent": ".opencode/agent/ha-component-dev.md",
+    "hacs": "hacs.json",
+    "readme": "README.md"
   },
   "decisions": [
     {
@@ -57,6 +62,11 @@
       "date": "2026-06-07",
       "decision": "Guardar una lectura inicial en hass.data durante async_setup_entry.",
       "reason": "Permite confirmar que la integracion puede leer una entidad existente antes de definir la visualizacion final."
+    },
+    {
+      "date": "2026-06-07",
+      "decision": "Instalar el componente desde un repositorio personalizado, preferentemente usando HACS.",
+      "reason": "El flujo esperado de prueba no debe depender de copiar manualmente la carpeta custom_components."
     }
   ],
   "open_questions": [
@@ -95,12 +105,18 @@
     {
       "order": 4,
       "task": "Documentar pasos de prueba local en docs/exec.md.",
+      "status": "completed"
+    },
+    {
+      "order": 5,
+      "task": "Instalar desde el repositorio personalizado en Home Assistant local y validar que HACS detecte la integracion.",
       "status": "pending"
     }
   ],
   "constraints": [
     "No asumir el entity_id real del tanque de gas.",
     "No agregar integraciones externas si no son necesarias para la primera prueba.",
+    "No depender de copiar manualmente custom_components para la instalacion inicial.",
     "Priorizar una prueba local basica antes de expandir visualizacion o empaquetado.",
     "Actualizar esta memoria cuando cambien decisiones, bloqueos o siguientes pasos."
   ]

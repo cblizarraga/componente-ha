@@ -10,6 +10,8 @@ Este archivo registra el avance practico del desarrollo del componente hasta log
 - Agente especializado creado en `.opencode/agent/ha-component-dev.md`.
 - Memoria documental creada en `docs/memory.json`.
 - Constantes compartidas creadas en `custom_components/componente_ha/const.py`.
+- Metadatos para repositorio personalizado creados en `hacs.json`.
+- Guia de instalacion creada en `README.md`.
 - Archivos iniciales creados:
   - `manifest.json`
   - `__init__.py`
@@ -53,7 +55,8 @@ Estado: pendiente.
 
 ### 4. Probar en Home Assistant Local
 
-- Copiar o montar `custom_components/componente_ha` en la configuracion local de Home Assistant.
+- Agregar `https://github.com/cblizarraga/componente-ha` como repositorio personalizado de HACS.
+- Instalar la integracion desde HACS.
 - Reiniciar Home Assistant.
 - Agregar la integracion desde la UI.
 - Ingresar el `entity_id` del tanque de gas.
@@ -72,6 +75,8 @@ Estado: pendiente.
 - Se creo `docs/memory.json` como memoria documental de largo plazo del proyecto.
 - Se agrego `entity_id` al config flow con validacion de formato, validacion de existencia y prevencion de duplicados por entidad.
 - Se agrego lectura inicial del estado configurado desde `hass.states` y almacenamiento minimo en `hass.data`.
+- Se definio que el metodo de instalacion sera desde repositorio personalizado, no copiando la carpeta manualmente.
+- Se agrego `hacs.json` y `README.md` con instrucciones iniciales para instalar desde HACS.
 
 ## Riesgos o Bloqueos
 

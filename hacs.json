@@ -1,0 +1,7 @@
+{
+  "name": "Componente HA",
+  "render_readme": true,
+  "domains": [
+    "componente_ha"
+  ]
+}
