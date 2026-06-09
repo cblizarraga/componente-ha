@@ -7,7 +7,7 @@ from typing import Any
 import voluptuous as vol
 
 from homeassistant import config_entries
-from homeassistant.core import valid_entity_id
+from homeassistant.core import callback, valid_entity_id
 from homeassistant.helpers import selector
 
 from .const import CONF_ENTITIES, CONF_ENTITY_ID, CONF_NAME, DOMAIN
@@ -19,6 +19,7 @@ class WizzyOSConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     VERSION = 1
 
     @staticmethod
+    @callback
     def async_get_options_flow(
         config_entry: config_entries.ConfigEntry,
     ) -> config_entries.OptionsFlow:

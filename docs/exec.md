@@ -18,7 +18,7 @@ Este archivo registra el avance practico del desarrollo del componente hasta log
 - Plataforma `sensor` creada en `custom_components/wizzyos/sensor.py`.
 - Config flow actualizado para seleccionar entidades existentes con selector nativo.
 - Options flow creado para configurar varias entidades desde el menu `Configurar`.
-- Version del manifest actualizada a `0.3.0`.
+- Version del manifest actualizada a `0.3.1`.
 - Archivos iniciales creados:
   - `manifest.json`
   - `__init__.py`
@@ -101,10 +101,14 @@ Estado: pendiente.
 - Se actualizo el config flow para usar un selector nativo de entidades existentes.
 - Se agrego options flow para seleccionar varias entidades existentes desde el menu `Configurar` de la integracion.
 - Se incremento la version del manifest a `0.3.0`.
+- El log local confirmo que WizzyOS crea `sensor.nivel_de_tanque_de_gas`.
+- Se corrigio el warning causado por copiar `device_class` incompatible desde la entidad origen.
+- Se reforzo el registro del options flow con `@callback` y se incremento la version del manifest a `0.3.1`.
 
 ## Riesgos o Bloqueos
 
 - Falta conocer el `entity_id` real del tanque de gas.
 - Falta probar en Home Assistant local la creacion del sensor propio de WizzyOS con la entidad del tanque de gas.
+- Falta confirmar si despues de actualizar a `0.3.1` aparece `Configurar` en el menu de la entrada WizzyOS.
 - La prueba local depende de tener acceso a una instancia de Home Assistant con la entidad ya configurada.
 - Confirmado: la integracion ya funciona en Home Assistant local despues de los ajustes de dominio/config flow.

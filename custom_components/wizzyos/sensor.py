@@ -18,8 +18,6 @@ from homeassistant.helpers.event import async_track_state_change_event
 
 from .const import ATTR_SOURCE_ENTITY_ID, CONF_ENTITIES, CONF_ENTITY_ID
 
-ATTR_DEVICE_CLASS = "device_class"
-
 
 async def async_setup_entry(
     hass: HomeAssistant,
@@ -82,13 +80,6 @@ class WizzyOSEntitySensor(SensorEntity):
         if self._source_state is None:
             return None
         return self._source_state.attributes.get(ATTR_ICON)
-
-    @property
-    def device_class(self) -> str | None:
-        """Return the source entity device class."""
-        if self._source_state is None:
-            return None
-        return self._source_state.attributes.get(ATTR_DEVICE_CLASS)
 
     @property
     def extra_state_attributes(self) -> dict[str, Any]:
