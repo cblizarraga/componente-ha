@@ -3,7 +3,7 @@
     "name": "wizzyos-ha",
     "display_name": "WizzyOS",
     "integration_domain": "wizzyos",
-    "manifest_version": "0.3.2",
+    "manifest_version": "0.4.0",
     "component_path": "custom_components/wizzyos",
     "documentation_path": "docs",
     "opencode_agent": "ha-component-dev"
@@ -31,7 +31,8 @@
     "technical_domain_updated_to_wizzyos": true,
     "context_management_documented": true,
     "integration_working_in_home_assistant": true,
-    "integration_type_updated_to_entity": true,
+    "integration_type_updated_to_entity": false,
+    "integration_type_reverted_to_hub": true,
     "sensor_platform_created": true,
     "entity_selector_enabled": true,
     "visible_mirror_sensor_created": true,
@@ -147,6 +148,11 @@
       "date": "2026-06-08",
       "decision": "Agregar device_info a los sensores espejo de WizzyOS.",
       "reason": "La captura mostro la pagina creada por HACS para el repositorio, no la entrada configurable real. Agrupar sensores bajo un dispositivo WizzyOS propio ayuda a distinguir las entidades del componente frente a las entidades Update de HACS."
+    },
+    {
+      "date": "2026-06-08",
+      "decision": "Revertir integration_type de entity a hub.",
+      "reason": "El usuario confirmo que la primera version si mostraba el flujo para pedir entidad. El cambio a entity resolvia etiquetas, pero empeoro la experiencia de configuracion. Se prioriza recuperar la integracion agregable/configurable."
     }
   ],
   "test_findings": [
@@ -179,6 +185,12 @@
       "source": "Home Assistant UI",
       "finding": "La pantalla donde el usuario busca Configurar corresponde al dispositivo/pagina de HACS para el repositorio WizzyOS, con entidades Update y Pre-release, no necesariamente a la entrada configurable del custom integration.",
       "status": "documented"
+    },
+    {
+      "date": "2026-06-08",
+      "source": "Home Assistant UI",
+      "finding": "WizzyOS aparece agrupado bajo HACS como repositorio instalado. La entrada propia de la integracion no aparece claramente en la lista principal despues de cambiar integration_type a entity.",
+      "status": "fix_applied_pending_retest"
     }
   ],
   "open_questions": [
