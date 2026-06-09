@@ -2,8 +2,8 @@
   "project": {
     "name": "componente-ha",
     "display_name": "WizzyOS",
-    "integration_domain": "componente_ha",
-    "component_path": "custom_components/componente_ha",
+    "integration_domain": "wizzyos",
+    "component_path": "custom_components/wizzyos",
     "documentation_path": "docs",
     "opencode_agent": "ha-component-dev"
   },
@@ -26,13 +26,14 @@
     "hacs_metadata_created": true,
     "readme_created": true,
     "config_flow_import_fix_applied": true,
-    "display_name_updated_to_wizzyos": true
+    "display_name_updated_to_wizzyos": true,
+    "technical_domain_updated_to_wizzyos": true
   },
   "known_files": {
-    "manifest": "custom_components/componente_ha/manifest.json",
-    "init": "custom_components/componente_ha/__init__.py",
-    "const": "custom_components/componente_ha/const.py",
-    "config_flow": "custom_components/componente_ha/config_flow.py",
+    "manifest": "custom_components/wizzyos/manifest.json",
+    "init": "custom_components/wizzyos/__init__.py",
+    "const": "custom_components/wizzyos/const.py",
+    "config_flow": "custom_components/wizzyos/config_flow.py",
     "plan": "docs/plan.md",
     "execution": "docs/exec.md",
     "memory": "docs/memory.json",
@@ -79,7 +80,12 @@
     {
       "date": "2026-06-08",
       "decision": "Usar WizzyOS como nombre visible de la integracion.",
-      "reason": "El usuario pidio reemplazar Componente HA por WizzyOS en nombres y descripciones visibles. Se mantiene el dominio tecnico componente_ha para no cambiar la estructura instalada."
+      "reason": "El usuario pidio reemplazar Componente HA por WizzyOS en nombres y descripciones visibles."
+    },
+    {
+      "date": "2026-06-08",
+      "decision": "Cambiar el dominio tecnico de componente_ha a wizzyos.",
+      "reason": "El usuario pidio que el dominio tecnico tambien refleje el nombre WizzyOS. Es un cambio rompedor y Home Assistant lo tratara como una integracion distinta."
     }
   ],
   "test_findings": [
@@ -138,6 +144,7 @@
     "No asumir el entity_id real del tanque de gas.",
     "No agregar integraciones externas si no son necesarias para la primera prueba.",
     "No depender de copiar manualmente custom_components para la instalacion inicial.",
+    "El dominio tecnico actual es wizzyos; no volver a componente_ha salvo solicitud explicita.",
     "Priorizar una prueba local basica antes de expandir visualizacion o empaquetado.",
     "Actualizar esta memoria cuando cambien decisiones, bloqueos o siguientes pasos."
   ]

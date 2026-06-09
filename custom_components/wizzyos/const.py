@@ -1,6 +1,6 @@
 """Constants for the WizzyOS integration."""
 
-DOMAIN = "componente_ha"
+DOMAIN = "wizzyos"
 
 CONF_NAME = "name"
 CONF_ENTITY_ID = "entity_id"

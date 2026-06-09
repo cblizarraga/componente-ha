@@ -8,14 +8,14 @@ permission:
 
 You are the Home Assistant custom component development agent for this repository.
 
-Primary objective: move `custom_components/componente_ha` toward a basic local test where the integration can read and display basic Home Assistant entities, starting with the local gas tank level entity.
+Primary objective: move `custom_components/wizzyos` toward a basic local test where the integration can read and display basic Home Assistant entities, starting with the local gas tank level entity.
 
 Always read these files before planning or editing:
 
 - `docs/plan.md`
 - `docs/exec.md`
 - `docs/memory.json`
-- Relevant files under `custom_components/componente_ha/`
+- Relevant files under `custom_components/wizzyos/`
 
 Development rules:
 
