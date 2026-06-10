@@ -41,7 +41,9 @@
     "multiple_entities_supported": true,
     "options_flow_callback_reinforced": true,
     "mirrored_device_class_removed": true,
-    "sensor_device_info_added": true
+    "sensor_device_info_added": true,
+    "service_type_confirmed_in_home_assistant": true,
+    "gas_tank_configured_in_wizzyos": true
   },
   "known_files": {
     "manifest": "custom_components/wizzyos/manifest.json",
@@ -196,14 +198,20 @@
       "date": "2026-06-08",
       "source": "Home Assistant UI",
       "finding": "WizzyOS aparece agrupado bajo HACS como repositorio instalado. La entrada propia de la integracion no aparece claramente en la lista principal despues de cambiar integration_type a entity.",
-      "status": "fix_applied_pending_retest"
+      "status": "resolved_by_service_type"
+    },
+    {
+      "date": "2026-06-08",
+      "source": "Home Assistant UI",
+      "finding": "WizzyOS ya aparece como service y el tanque de gas quedo configurado dentro de WizzyOS.",
+      "status": "confirmed_working"
     }
   ],
   "open_questions": [
     {
       "id": "gas_tank_entity_id",
       "question": "Cual es el entity_id real del tanque de gas en Home Assistant local?",
-      "status": "pending"
+      "status": "configured_in_home_assistant"
     },
     {
       "id": "gas_tank_unit",
@@ -255,7 +263,7 @@
     {
       "order": 7,
       "task": "Probar en Home Assistant local que el sensor propio de WizzyOS aparece y refleja el tanque de gas.",
-      "status": "pending"
+      "status": "completed"
     },
     {
       "order": 8,

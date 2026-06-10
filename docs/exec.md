@@ -111,11 +111,12 @@ Estado: pendiente.
 - Se revirtio `integration_type` de `entity` a `hub` porque el cambio a `entity` altero el flujo visible y la primera version con `hub` si mostraba el formulario para seleccionar entidad.
 - Se definio la arquitectura principal como Home Assistant -> WizzyOS SaaS/GCP para reflejar entidades y crear gemelos digitales en la nube.
 - Se cambio `integration_type` a `service`, que corresponde a integraciones que conectan Home Assistant con un servicio externo.
+- Se confirmo que WizzyOS ya aparece como servicio en Home Assistant y que el tanque de gas quedo configurado.
 
 ## Riesgos o Bloqueos
 
-- Falta conocer el `entity_id` real del tanque de gas.
-- Falta probar en Home Assistant local la creacion del sensor propio de WizzyOS con la entidad del tanque de gas.
+- Confirmado: el tanque de gas ya quedo configurado en WizzyOS.
+- Confirmado: WizzyOS aparece como servicio en Home Assistant.
 - Falta confirmar si despues de actualizar a `0.3.1` aparece `Configurar` en el menu de la entrada WizzyOS.
 - Falta confirmar que HACS descarga correctamente desde `main` o desde un tag estable en vez de intentar descargar hashes como ramas.
 - La prueba local depende de tener acceso a una instancia de Home Assistant con la entidad ya configurada.
