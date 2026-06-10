@@ -223,7 +223,13 @@
       "date": "2026-06-09",
       "source": "Home Assistant log",
       "finding": "HACS intento descargar https://github.com/cblizarraga/wizzyos-ha/archive/refs/heads/1c1337b.zip y recibio 404. Se creo la rama remota 1c1337b apuntando al commit corregido para que esa URL exista.",
-      "status": "workaround_applied_pending_retest"
+      "status": "workaround_applied"
+    },
+    {
+      "date": "2026-06-09",
+      "source": "Home Assistant UI",
+      "finding": "Tras reiniciar/reordenar HACS, el usuario reporto que WizzyOS parece quedar funcionando correctamente.",
+      "status": "confirmed_by_user_preliminary"
     }
   ],
   "open_questions": [
@@ -297,7 +303,7 @@
     {
       "order": 10,
       "task": "Confirmar que HACS instala WizzyOS desde main o tag estable sin errores 404.",
-      "status": "pending"
+      "status": "completed"
     }
   ],
   "constraints": [
