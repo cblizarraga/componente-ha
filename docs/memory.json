@@ -44,7 +44,8 @@
     "sensor_device_info_added": true,
     "service_type_confirmed_in_home_assistant": true,
     "gas_tank_configured_in_wizzyos": true,
-    "options_flow_config_entry_setter_fix_applied": true
+    "options_flow_config_entry_setter_fix_applied": true,
+    "hacs_hash_branch_workaround_applied": true
   },
   "known_files": {
     "manifest": "custom_components/wizzyos/manifest.json",
@@ -217,6 +218,12 @@
       "source": "Home Assistant log",
       "finding": "Al abrir options flow se reporto AttributeError: property 'config_entry' of 'WizzyOSOptionsFlow' object has no setter.",
       "status": "fix_applied_pending_retest"
+    },
+    {
+      "date": "2026-06-09",
+      "source": "Home Assistant log",
+      "finding": "HACS intento descargar https://github.com/cblizarraga/wizzyos-ha/archive/refs/heads/1c1337b.zip y recibio 404. Se creo la rama remota 1c1337b apuntando al commit corregido para que esa URL exista.",
+      "status": "workaround_applied_pending_retest"
     }
   ],
   "open_questions": [

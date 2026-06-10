@@ -115,6 +115,7 @@ Estado: pendiente.
 - El log mostro `AttributeError: property 'config_entry' of 'WizzyOSOptionsFlow' object has no setter` al abrir options flow.
 - Se corrigio `WizzyOSOptionsFlow` para usar `_config_entry` en vez de asignar la propiedad reservada `config_entry`.
 - Se incremento la version del manifest a `0.5.1`.
+- HACS intento descargar `refs/heads/1c1337b.zip`; se creo una rama remota `1c1337b` apuntando al commit corregido para resolver ese 404.
 
 ## Riesgos o Bloqueos
 
