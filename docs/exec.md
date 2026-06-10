@@ -112,6 +112,9 @@ Estado: pendiente.
 - Se definio la arquitectura principal como Home Assistant -> WizzyOS SaaS/GCP para reflejar entidades y crear gemelos digitales en la nube.
 - Se cambio `integration_type` a `service`, que corresponde a integraciones que conectan Home Assistant con un servicio externo.
 - Se confirmo que WizzyOS ya aparece como servicio en Home Assistant y que el tanque de gas quedo configurado.
+- El log mostro `AttributeError: property 'config_entry' of 'WizzyOSOptionsFlow' object has no setter` al abrir options flow.
+- Se corrigio `WizzyOSOptionsFlow` para usar `_config_entry` en vez de asignar la propiedad reservada `config_entry`.
+- Se incremento la version del manifest a `0.5.1`.
 
 ## Riesgos o Bloqueos
 

@@ -3,7 +3,7 @@
     "name": "wizzyos-ha",
     "display_name": "WizzyOS",
     "integration_domain": "wizzyos",
-    "manifest_version": "0.5.0",
+    "manifest_version": "0.5.1",
     "component_path": "custom_components/wizzyos",
     "documentation_path": "docs",
     "opencode_agent": "ha-component-dev"
@@ -43,7 +43,8 @@
     "mirrored_device_class_removed": true,
     "sensor_device_info_added": true,
     "service_type_confirmed_in_home_assistant": true,
-    "gas_tank_configured_in_wizzyos": true
+    "gas_tank_configured_in_wizzyos": true,
+    "options_flow_config_entry_setter_fix_applied": true
   },
   "known_files": {
     "manifest": "custom_components/wizzyos/manifest.json",
@@ -161,6 +162,11 @@
       "date": "2026-06-08",
       "decision": "Usar integration_type service para WizzyOS.",
       "reason": "La funcion principal es exportar/reflejar entidades de Home Assistant hacia WizzyOS SaaS/GCP, donde se visualizaran gemelos digitales. Home Assistant es la fuente de verdad, por lo que service describe mejor la arquitectura que hub o entity."
+    },
+    {
+      "date": "2026-06-09",
+      "decision": "Usar _config_entry dentro de WizzyOSOptionsFlow.",
+      "reason": "Home Assistant expone config_entry como propiedad sin setter en OptionsFlow; asignarla directamente causa AttributeError al abrir la configuracion."
     }
   ],
   "test_findings": [
@@ -205,6 +211,12 @@
       "source": "Home Assistant UI",
       "finding": "WizzyOS ya aparece como service y el tanque de gas quedo configurado dentro de WizzyOS.",
       "status": "confirmed_working"
+    },
+    {
+      "date": "2026-06-09",
+      "source": "Home Assistant log",
+      "finding": "Al abrir options flow se reporto AttributeError: property 'config_entry' of 'WizzyOSOptionsFlow' object has no setter.",
+      "status": "fix_applied_pending_retest"
     }
   ],
   "open_questions": [
